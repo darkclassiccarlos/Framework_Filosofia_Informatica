@@ -10,6 +10,9 @@
     <h1>view: show</h1>
     <script type="text/javascript">
         const socket = io();
+        socket.on('update slide', (data) => {
+            alert(data);
+        });
     </script>
 </body>
 

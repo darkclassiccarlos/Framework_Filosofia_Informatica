@@ -22,10 +22,9 @@ app.get('/edit', (req, res) => {
 });
 
 // Socket Events
-
 io.on('connection', (socket) => {
     console.log(`[ server.js ] ${socket.id} connected`);
-
+    socket.emit('update slide', `Hello ${socket.id}`);
     socket.on('disconnect', () => {
         console.log(`[ server.js ] ${socket.id} disconnected`);
     });
